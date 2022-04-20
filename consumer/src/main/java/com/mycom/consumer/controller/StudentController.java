@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
  * @version: 1.0
  */
 @RestController
-@RequestMapping("/rest")
+@RequestMapping("/consumer")
 public class StudentController {
 
     @DubboReference
     private StudentService studentService;
 
-    @GetMapping("/")
+    @GetMapping("/get")
     public String getStudent() {
         return studentService.findAll().toString();
     }

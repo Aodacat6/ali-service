@@ -22,7 +22,7 @@ public class Test1Controller implements EnvironmentAware {
 
     @GetMapping("/test")
     public String test() {
-        return "hello, this is provier，" + type;
+        return "hello, this is provier1，" + type;
     }
 
     @Override

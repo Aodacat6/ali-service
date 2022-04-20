@@ -1,10 +1,10 @@
 server:
-  port: 8088
+  port: 8099
 
 
 spring:
   application:
-    name: provider-service
+    name: consumer-service
   main:
     allow-bean-definition-overriding: true
   cloud:
@@ -12,7 +12,7 @@ spring:
       config:
         server-addr: 192.16.1.83:8848
         file-extension: yaml
-        name: provider-service
+        name: consumer-service
         namespace: dev
       discovery:
         server-addr: 192.16.1.83:8848
@@ -34,4 +34,4 @@ dubbo:
     base-packages: com.mycom.provider.service.impl
   protocol:
     name: dubbo
-    port: 15512
+    port: 15513
