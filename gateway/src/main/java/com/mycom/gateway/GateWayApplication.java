@@ -1,23 +1,21 @@
-package com.mycom.provider;
+package com.mycom.gateway;
 
-import org.apache.dubbo.config.spring.context.annotation.EnableDubbo;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
  * @author ：songdalin
- * @date ：2022-04-06 下午 03:56
+ * @date ：2022-4-19 下午 03:57
  * @description：
  * @modified By：
  * @version: 1.0
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-@EnableDubbo
-public class ProviderApplication {
+public class GateWayApplication {
 
     public static void main(String[] args){
-        SpringApplication.run(ProviderApplication.class, args);
+        SpringApplication.run(GateWayApplication.class, args);
     }
 }

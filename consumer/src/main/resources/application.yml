@@ -3,7 +3,7 @@ common:
 
 
 server:
-  port: 14512
+  port: 8088
 spring:
   application:
     name: ${common.server-name}
@@ -13,7 +13,7 @@ dubbo:
   application:
     name: ${common.server-name}
   registry:
-    address: nacos://127.0.0.1:8848
+    address: nacos://192.16.1.83:8848
     username: nacos
     password: nacos
   protocol:

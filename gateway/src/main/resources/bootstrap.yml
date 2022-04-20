@@ -1,0 +1,43 @@
+server:
+  port: 8081
+
+spring:
+  jackson:
+    time-zone: GMT+8
+  application:
+    name: gateway
+  cloud:
+    nacos:
+      #这个是注册中心
+      discovery:
+        server-addr: 192.16.1.83:8848
+        service: gateway
+        namespace: dev
+      #这个才是配置中心
+      config:
+        server-addr: 192.16.1.83:8848
+        #file-extension: yaml 指定云端配置文件类型，默认是properties，如果是yaml格式则必须加此配置
+        file-extension: yaml
+        name: gateway
+        namespace: dev
+        #group: DEFAULT_GROUP
+
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: provider-service
+          uri: lb://provider-service
+          #uri: http://localhost:8089
+          predicates:
+            #这里跟zuul不一样，转发后还会携带/privider/路径
+            - Path=/provider/**
+
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: debug

@@ -1,0 +1,37 @@
+server:
+  port: 8089
+
+
+spring:
+  application:
+    name: provider-service
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      config:
+        server-addr: 192.16.1.83:8848
+        file-extension: yaml
+        name: provider-service
+        namespace: dev
+      discovery:
+        server-addr: 192.16.1.83:8848
+        #service: provider-service
+        namespace: dev
+        username: nacos
+        password: nacos
+dubbo:
+#  application:
+#    #id: provider-service
+#    name: provider-service
+  registry:
+    address: nacos://192.16.1.83:8848
+#    parameters:
+#      namespace: dev
+#    username: nacos
+#    password: nacos
+  scan:
+    base-packages: com.mycom.provider.service.impl
+  protocol:
+    name: dubbo
+    port: 15511

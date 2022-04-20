@@ -12,6 +12,7 @@
         <module>common-api</module>
         <module>consumer</module>
         <module>provider</module>
+        <module>gateway</module>
     </modules>
 
     <properties>
@@ -22,6 +23,7 @@
         <spring-boot.version>2.3.5.RELEASE</spring-boot.version>
         <dubbo.version>2.7.8</dubbo.version>
         <nacos-client.version>1.4.0</nacos-client.version>
+        <gateway.version>2.2.8.RELEASE</gateway.version>
     </properties>
 
     <dependencyManagement>
@@ -79,6 +81,11 @@
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-starter-test</artifactId>
                 <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-gateway</artifactId>
+                <version>${gateway.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>

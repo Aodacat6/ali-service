@@ -1,24 +1,9 @@
-common:
-  server-name: provider-service
 
+type: 1
 
-
-server:
-  port: 14511
-spring:
-  application:
-    name: ${common.server-name}
-  main:
-    allow-bean-definition-overriding: true
-dubbo:
-  application:
-    name: ${common.server-name}
-  registry:
-    address: nacos://127.0.0.1:8848
-    username: nacos
-    password: nacos
-  scan:
-    base-packages: com.mycom.provider.service.impl
-  protocol:
-    name: dubbo
-    port: 15511
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: debug
