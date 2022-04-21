@@ -40,6 +40,17 @@ spring:
             #这里跟zuul不一样，转发后还会携带/privider/路径
             - Path=/consumer/**
 
+    sentinel:
+      transport:
+        port: 9001
+        dashboard: 127.0.0.1:9000
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
 logging:
   level:
     org:
